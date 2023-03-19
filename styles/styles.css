@@ -1,0 +1,755 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
+
+/*-----------------Table of Contents:-----------------*/
+/*        1. Global Styles
+          2. Reusables
+          3. Typografie
+          4.Header
+          5.main
+          5.1 Contact-Form  Contactformulier
+          6. Footer
+/*-------------------------------------------------*/
+/* 1. Global Styles*/
+/*-------------------------------------------------*/
+
+/**
+    For the padding not to affect the width of the element,
+
+*/
+
+
+
+body {
+    font-family: Merriweather, roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    flex-wrap: nowrap;
+
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+
+}
+
+a:link {
+    text-decoration: none;
+    color: var(--blue);
+
+
+}
+
+li {
+
+}
+
+li:hover {
+    text-decoration-line: line-through;
+}
+
+/* --------------- 2-Reusables ----------------------- */
+
+:root {
+
+
+    --purple: #5722CD;
+    --blue: #4845E4;
+    --pink: #ED4385;
+    --black: #0C0C0C; /* - Zwart (voor standaard tekst)-*/
+    --white: #F2F0FF; /*--(voor de grote zwevende woorden, zoals "hello" en "services")--*/
+    --silver: #7A7A7A; /*(voor de service-tegel tekst)*/
+
+}
+
+/*--------------------------------*/
+/*         3. Typografie           */
+/*--------------------------------*/
+
+h1 {
+    font-weight: 600;
+    font-style: normal;
+    font-size: 48px;
+    color: var(--pink);
+    text-align: center;
+}
+
+h2 {
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+}
+
+h3 {
+
+    font-weight: 700;
+    padding: 1px;
+    font-size: 18px;
+}
+
+h4 {
+    color: var(--white);
+    font-weight: 200;
+    padding: 2.8px;
+    font-size: 20px;
+    font-style: normal;
+}
+
+h5 {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+h6 {
+    font-weight: 100;
+    font-style: normal;
+    font-size: 12px;
+    color: var(--silver);
+
+
+}
+
+p {
+    color: var(--black);
+    font-weight: 100;
+    font-size: 10px;
+}
+
+a {
+    color: var(--blue);
+    font-weight: 200;
+    font-size: 10px;
+}
+
+h4 {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-grow: 1;
+    flex-basis: 100px;
+
+}
+
+
+.triangle_up {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-style: solid;
+    border-width: 50px 0 0 1600px;
+    border-color: var(--purple) transparent transparent transparent;
+
+
+}
+
+.triangle_down {
+    position: relative;
+    border-style: solid;
+    border-width: 50px 0 0 1600px;
+    border-color: transparent transparent transparent var(--black);
+    bottom: 0;
+    left: 0;
+
+
+}
+
+/*------------------ 4. HEADER ------------------------*/
+/* Add a black background color to the top navigation */
+/*-----------------------------------------------------*/
+
+
+.outer-content-container-nav {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--purple);
+    width: 100%;
+    flex-basis: auto;
+    flex-shrink: 0;
+    flex-grow: 1;
+
+
+}
+
+.inner-content-container-nav {
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    width: 56%;
+
+
+}
+
+.inner-content-container h1 {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    text-align: center;
+
+}
+
+.inner-content-container h2 {
+    display: flex;
+    justify-content: center;
+    flex-basis: 100px;
+    align-self: center;
+    color: #f3f2f8;
+
+}
+
+.nav-list {
+    justify-content: end;
+    gap: 30px;
+}
+
+.nav-list a {
+    color: white;
+}
+
+.header {
+
+    background: linear-gradient(300deg, 50% Var(--Paars), 30% var(--blue), 20% var(--black));
+    color: var(--white);
+    width: 100%;
+    height: 600px;
+    display: flex;
+    bottom: -10px;
+    border: 1px var(--blue);
+
+}
+
+.outer-content-container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    color: var(--white);
+    width: 100%;
+
+}
+
+.inner-content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    color: var(--white);
+    margin: auto;
+
+
+}
+
+/*--------------------------------*/
+/*              SQUIGGLE      */
+/*--------------------------------*/
+.squiggle_line_stripe {
+    display: flex;
+    flex-basis: auto;
+    align-self: center;
+    width: 100px;
+    height: 100px;
+    content: url("../assets/squiggle_line_stripe.svg");
+    justify-content: end;
+    margin-block-end: -10px;
+    margin-block-start: 20px;
+}
+
+.squiggle_line_stripe:hover {
+    display: flex;
+    flex-basis: auto;
+    align-self: center;
+    width: 100px;
+    height: 100px;
+    content: url("../assets/noise-texture.png");
+    justify-content: end;
+    margin-block-end: -10px;
+    margin-block-start: 20px;
+    top: 0;
+
+}
+
+
+
+/*-----------------------------------------------*/
+/*              5. MAIN                           */
+/*-----------------------------------------------*/
+
+
+/*-----------------------------------------------*/
+/*              5.1 INTRO                          */
+/*-----------------------------------------------*/
+
+
+.intro {
+    display: flex;
+    background-color: var(--white);
+
+
+}
+
+.outer-content-intro {
+    display: flex;
+    flex-shrink: 0;
+    flex-grow: 1;
+    flex-flow: column;
+    background-color: var(--white);
+    color: var(--purple);
+    height: 60vh;
+    width: 100%;
+
+    align-self: center;
+    justify-content: center;
+
+
+}
+
+.inner-content-intro {
+    color: var(--purple);
+    display: flex;
+    flex-direction: column;
+    padding-top: 40vh;
+    padding-bottom: 40vh;
+    flex-basis: auto;
+    align-self: center;
+    width: 420px;
+    align-items: center;
+    flex-shrink: 0;
+    flex-grow: 1;
+
+
+}
+
+.intro .item {
+    display: flex;
+
+
+}
+
+.item-1 {
+
+    display: flex;
+
+
+}
+
+.item-2 {
+
+    display: flex;
+    flex-basis: auto;
+    text-align: center;
+
+}
+
+.item-3 {
+    display: flex;
+    flex-basis: auto;
+    text-align: center;
+
+}
+
+.item4 {
+    display: flex;
+    flex-basis: auto;
+
+}
+
+/*----------------------------------------*/
+/* 5.2  WORK    3 COLUMN   WITH 2 ROWS   */
+/*---------------------------------------*/
+
+/*section*/
+#work {
+    background-color: var(--white);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    gap: 3rem;
+
+}
+
+.outer-article {
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+
+
+}
+/**gap: 10px 20px; /* row-gap column gap */
+/*row-gap: 10px;
+column-gap: 20px; **/
+.inner-article {
+    display: flex;
+    flex-basis: 64%;
+    gap: 8%;
+    flex-wrap: revert;
+    flex-grow: 0;
+    flex-shrink: 1;
+
+}
+
+.outer-article:nth-child(odd) .inner-article {
+    flex-direction: row-reverse;
+}
+
+
+
+.squi-line {
+    display: flex;
+    width: 20%;
+
+}
+
+
+.button-view-project {
+    text-transform: uppercase;
+    position: relative;
+
+    color: var(--blue); /* Set your desired text color */
+    padding: 10px 20px; /* Set your desired padding */
+    border: none; /* Remove button border */
+    cursor: pointer;
+}
+
+button::before,
+button::after {
+    content: "-----";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff; /* Set your desired line color */
+    transition: all 0.3s ease;
+}
+
+button::before {
+    right: 0;
+}
+
+button::after {
+    left: 0;
+}
+
+button:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+button:hover::after {
+    width: 100%;
+    right: 0;
+}
+
+.span {
+    width: 100%;
+
+}
+
+img {
+    width: 100%;
+}
+
+.image-wrapper {
+    flex-basis: 800px;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+#work a {
+    display: flex;
+    flex-flow: row;
+
+    position: relative;
+    justify-content: space-between;
+    font-stretch: semi-expanded;
+    margin-left: 2px;
+    font-size: 14px;
+    max-font-size: 14px;
+    min-font-size: 6px;
+}
+
+
+/*-----------------------------------------------------*/
+/*       5.5    6 FLEX BOXS WRAP ICON TITEL AND TEXT   */
+/*-----------------------------------------------------*/
+
+/*-----------------------------------------------------*/
+/*           SERVICES WRAPPER                           */
+/*-----------------------------------------------------*/
+.services_wrapper {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    flex-direction: row;
+    padding: 40px;
+    justify-content: center;
+
+    box-shadow: 0 16px 16px 0 rgba(0, 0, 0, .1);
+    color: var(--purple);
+    text-align: left;
+    align-items: flex-start;
+    align-content: flex-start;
+    font-family: Roboto, Sans-serif;
+
+}
+
+/*-----------------------------------------------------*/
+/*                      ICONS                          */
+/*-----------------------------------------------------*/
+.icon-text {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    color: var(--purple);
+
+
+}
+
+/*-----------------------------------------------------*/
+/*                WAT VAN SERVICES                               */
+/*-----------------------------------------------------*/
+
+.web_design {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    border: 1px solid var(--purple);
+    padding: 2rem;
+    flex-basis: 24%;
+    height: 18rem;
+    margin: 20px;
+    flex-shrink: 1;
+    flex-grow: 1;
+
+
+}
+
+.web_development {
+
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    border: 1px solid var(--purple);
+    padding: 2rem;
+    flex-basis: 24%;
+    height: 18rem;
+    margin: 20px;
+    flex-shrink: 1;
+    flex-grow: 1;
+
+}
+
+.user_experience {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    border: 1px solid var(--purple);
+    padding: 2rem;
+    flex-basis: 24%;
+    height: 18rem;
+    margin: 20px;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+.logo_design {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    border: 1px solid var(--purple);
+    padding: 2rem;
+    flex-basis: 24%;
+    height: 18rem;
+    margin: 20px;
+    flex-shrink: 1;
+    flex-grow: 1;
+
+}
+
+.seo {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    border: 1px solid var(--purple);
+    padding: 2rem;
+    flex-basis: 24%;
+    height: 18rem;
+    margin: 20px;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+.copy_writing {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    border: 1px solid var(--purple);
+    padding: 2rem;
+    flex-basis: 24%;
+    height: 18rem;
+    margin: 20px;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+
+/*--------------------------------*/
+/*        5.4 Contact-Form        */
+/*--------------------------------*/
+
+
+.outer-cc-together {
+    display: flex;
+    flex-direction: column;
+    /*for wierd browsers with out gradient*/
+    background: var(--purple);
+    /* ------4 the rest of the browsers-------------*/
+    background: linear-gradient(130deg, var(--purple) 20%, var(--blue));
+    padding: 4rem;
+}
+
+
+.inner-cc-together {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+ h1 {
+    align-self: center;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+
+}
+
+ h4 {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+
+}
+
+form {
+    width: 100%;
+    display: flex;
+    font-weight: 400;
+    color: var(--white);
+
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: center;
+    border-radius: 24px;
+    font-family: Roboto;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+
+label {
+    margin-top:18px;
+
+}
+
+input, textarea {
+    padding: 16px;
+    border-radius: 10px;
+
+}
+
+
+.button-send {
+    background-color: var(--pink);
+    font-weight: 200;
+    color: var(--white);
+    width: 160px;
+    height: 48px;
+    margin: 18px;
+    border-radius: 24px;
+    border-block-style: hidden;
+    align-self: center;
+
+
+}
+
+.button-send:hover {
+    font-weight: 200;
+    width: 160px;
+    height: 46px;
+    margin: 18px;
+    border-radius: 24px;
+    border-block-style: hidden;
+    align-self: center;
+    background-color: var(--white);
+    text-decoration-color: var(--black);
+    color: var(--black);
+}
+
+/*--------------------------------*/
+/*          6. Footer            */
+/*--------------------------------*/
+
+.outer-cc-footer {
+    display: flex;
+    width: 100%;
+
+}
+
+.inner-cc-footer {
+    display: flex;
+    justify-content: center;
+
+    color: var(--white);
+    background-color: var(--black);
+    font-style: normal;
+
+    font-family: Merriweather, roboto, sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+/*--------------------------------*/
+
+/*     That's All Folks!         */
+/*--------------------------------*/
+
+/**
+NOTE DIV CLASS ID
+ */
+
+/**
+# = id
+<div id="hello">
+#hello {
+
+}
+
+. = class
+<div class="hello">
+.hello {
+
+}
+
+nothing = element
+<div>
+div {
+
+}
+
+combine:
+div#hello.hello {
+
+}
+ */
+
+
+
+
+
