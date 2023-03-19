@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
 /*-----------------Table of Contents:-----------------*/
 /*        1. Global Styles
           2. Reusables
@@ -14,9 +15,10 @@
 
 /**
     For the padding not to affect the width of the element,
-
 */
-
+* {
+    box-sizing: border-box;
+}
 
 
 body {
@@ -24,7 +26,6 @@ body {
     display: flex;
     flex-direction: column;
     background-color: var(--white);
-    position: center;
 
 }
 
@@ -124,14 +125,14 @@ p {
     color: var(--black);
     font-weight: 100;
     font-size: 10px;
-    font-family: Roboto,sans-serif;
+
 }
 
 a {
     color: var(--blue);
     font-weight: 200;
     font-size: 10px;
-    font-family: Roboto, Sans-serif;
+
 }
 
 h4 {
@@ -159,7 +160,7 @@ h4 {
     position: relative;
     border-style: solid;
     border-width: 50px 0 0 1600px;
-    border-color: transparent transparent transparent var(--pink);
+    border-color: transparent transparent transparent var( --white);
     bottom: 0;
     left: 0;
 
@@ -171,34 +172,39 @@ h4 {
 /*-----------------------------------------------------*/
 
 
-.outer-content-container-nav {
+.outer-nav {
     display: flex;
     flex-direction: column;
     background-color: var(--purple);
     width: 100%;
-    flex-basis: auto;
-    flex-shrink: 0;
-    flex-grow: 1;
+
 
 
 }
 
-.inner-content-container-nav {
+.inner-nav {
     display: flex;
     flex-basis: 100%;
     flex-direction: column;
     justify-content: center;
     align-self: center;
     width: 56%;
+}
 
+.nav-list {
+    justify-content: end;
+    gap: 30px;
+}
 
+.nav-list a {
+    color: white;
 }
 
 .inner-content-container h1 {
     display: flex;
-    flex-grow: 1;
-    flex-shrink: 0;
     text-align: center;
+    justify-self: center;
+    padding: 30px;
 
 }
 
@@ -211,14 +217,6 @@ h4 {
 
 }
 
-.nav-list {
-    justify-content: end;
-    gap: 30px;
-}
-
-.nav-list a {
-    color: white;
-}
 
 .header {
 
@@ -248,7 +246,7 @@ h4 {
     align-self: center;
     color: var(--white);
     margin: auto;
-
+    width: 100%;
 
 }
 
@@ -258,31 +256,31 @@ h4 {
 .squiggle_line_stripe {
     display: flex;
     flex-basis: auto;
+    position: relative;
     align-self: center;
     width: 100px;
     height: 100px;
     content: url("../assets/squiggle_line_stripe.svg");
     justify-content: end;
-    margin-block-end: -10px;
+    margin-block-end: 10px;
     margin-block-start: 20px;
+    top: -10px;
 }
 
 .squiggle_line_stripe:hover {
     display: flex;
+    position: relative;
     flex-basis: auto;
     align-self: center;
     width: 100px;
     height: 100px;
     content: url("../assets/noise-texture.png");
     justify-content: end;
-    margin-block-end: -10px;
+    margin-block-end: 10px;
     margin-block-start: 20px;
-    top: 0;
+    top: -10px;
 
 }
-
-
-
 /*-----------------------------------------------*/
 /*              5. MAIN                           */
 /*-----------------------------------------------*/
@@ -296,6 +294,7 @@ h4 {
 .intro {
     display: flex;
     background-color: var(--white);
+    padding: 6%;
 
 
 }
@@ -414,27 +413,22 @@ column-gap: 20px; **/
     width: 20%;
 
 }
-
-
 .button-view-project {
+    background-color: var(--white);
     text-transform: uppercase;
-    position: relative;
-
+    position: absolute;
     color: var(--blue); /* Set your desired text color */
-    padding: 10px 20px; /* Set your desired padding */
+    /* Set your desired padding */
     border: none; /* Remove button border */
-    cursor: pointer;
+    cursor: context-menu;
 }
 
 .button-view-project::before,
 .button-view-project::after {
-    content: "-----";
+    content: "⎯⎯⎯⎯⎯⎯";
     position: absolute;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background-color: #fff; /* Set your desired line color */
-    transition: all 0.3s ease;
+    background-color: var(--white); /* Set your desired line color */
+
 }
 
 .button-view-project::before {
@@ -451,7 +445,7 @@ column-gap: 20px; **/
 }
 
 .button-view-project:hover::after {
-    width: 100%;
+    width: 110%;
     right: 0;
 }
 
@@ -505,7 +499,7 @@ img {
     text-align: left;
     align-items: flex-start;
     align-content: flex-start;
-    font-family: Roboto, Sans-serif;
+
 
 }
 
@@ -525,7 +519,8 @@ img {
 /*                WAT VAN SERVICES                               */
 /*-----------------------------------------------------*/
 
-.web_design {
+.web_design
+{
     display: flex;
     flex-direction: column;
     border-radius: 4px;
@@ -631,7 +626,7 @@ img {
     flex-shrink: 0;
 }
 
- h1 {
+h1 {
     align-self: center;
     color: var(--white);
     display: flex;
@@ -639,7 +634,7 @@ img {
 
 }
 
- h4 {
+h4 {
     display: flex;
     flex-direction: column;
     align-self: center;
@@ -658,7 +653,7 @@ form {
     flex-shrink: 0;
     justify-content: center;
     border-radius: 24px;
-    font-family: Roboto;
+
     padding-left: 10%;
     padding-right: 10%;
 
@@ -721,12 +716,8 @@ input, textarea {
     color: var(--white);
     background-color: var(--black);
     font-style: normal;
+}
 
-    font-family: Merriweather, roboto, sans-serif;
-}
-* {
-    box-sizing: border-box;
-}
 /*--------------------------------*/
 
 /*     That's All Folks!         */
@@ -740,27 +731,19 @@ NOTE DIV CLASS ID
 # = id
 <div id="hello">
 #hello {
-
 }
-
 . = class
 <div class="hello">
 .hello {
-
 }
-
 nothing = element
 <div>
 div {
-
 }
-
 combine:
 div#hello.hello {
-
 }
  */
-
 
 
 
