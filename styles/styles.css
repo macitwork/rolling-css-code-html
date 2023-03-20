@@ -144,13 +144,15 @@ h4 {
 
 }
 
-
+/*------------------------------------*/
+/*  TRIANGEL  DIAGONAL LINE    HEADER */
+/*------------------------------------*/
 .triangle_up {
     position: absolute;
     top: 0;
-    left: 0;
+    left: -2px;
     border-style: solid;
-    border-width: 50px 0 0 1600px;
+    border-width: 100px 0px 0px 1800px;
     border-color: var(--purple) transparent transparent transparent;
 
 
@@ -159,10 +161,10 @@ h4 {
 .triangle_down {
     position: relative;
     border-style: solid;
-    border-width: 50px 0 0 1600px;
+    border-width:  100px 0px 0px 1800px;
     border-color: transparent transparent transparent var( --white);
     bottom: 0;
-    left: 0;
+    left: -2px;
 
 
 }
@@ -264,7 +266,7 @@ h4 {
     justify-content: end;
     margin-block-end: 10px;
     margin-block-start: 20px;
-    top: -10px;
+    top:  3rem; /*it push it down*/
 }
 
 .squiggle_line_stripe:hover {
@@ -278,7 +280,7 @@ h4 {
     justify-content: end;
     margin-block-end: 10px;
     margin-block-start: 20px;
-    top: -10px;
+    top:  3rem;
 
 }
 /*-----------------------------------------------*/
@@ -294,7 +296,7 @@ h4 {
 .intro {
     display: flex;
     background-color: var(--white);
-    padding: 6%;
+    padding: 4rem;
 
 
 }
@@ -401,7 +403,9 @@ column-gap: 20px; **/
     flex-shrink: 1;
 
 }
-
+.link-project{
+    text-transform: uppercase;
+}
 .outer-article:nth-child(odd) .inner-article {
     flex-direction: row-reverse;
 }
@@ -425,7 +429,7 @@ column-gap: 20px; **/
 
 .button-view-project::before,
 .button-view-project::after {
-    content: "⎯⎯⎯⎯⎯⎯";
+    content: "⎯⎯";
     position: absolute;
     background-color: var(--white); /* Set your desired line color */
 
