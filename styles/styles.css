@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
-/*-----------------Table of Contents:-----------------*/
+   /*-----------------Table of Contents:-----------------*/
 /*        1. Global Styles
           2. Reusables
           3. Typografie
@@ -14,16 +14,16 @@
 /*-------------------------------------------------*/
 
 /*---For the padding not to affect the width of the element-----*/
-
-* {
+body *{
     box-sizing: border-box;
 }
 
 body {
-
     display: flex;
     flex-direction: column;
     background-color: var(--white);
+    width: 100%;
+
 
 }
 
@@ -61,7 +61,7 @@ li:hover {
     --blue: #4845E8;  /**Majorelle Blue*/
     --pink: #ED4385;   /**French Rose*/
     --black: #0C0C0C; /* - Zwart - Night (voor standaard tekst)-*/
-    --white: #F2F0FF; /*-- Magnolia (voor de grote zwevende woorden, zoals "hello" en "services")--*/
+    --white: #f1f5f3; /*-- Magnolia (voor de grote zwevende woorden, zoals "hello" en "services")--*/
     --silver: #7A7A7A; /*(voor de service-tegel tekst)*/
     --light-silver:#F3f0FF /*HELLO, SERVISEC (BONOS)*/
 
@@ -75,7 +75,7 @@ h1 {
     font-weight: 600;
     font-style: normal;
     font-size: 48px;
-    color: var(--pink);
+    color: var(--white);
     text-align: center;
     font-family: Merriweather,sans-serif;
 }
@@ -130,56 +130,29 @@ p {
 
 a {
     color: var(--blue);
-    font-weight: 200;
+    font-weight: 300;
     font-size: 10px;
     font-family: roboto, sans-serif;
 
 }
 
-h4 {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    flex-grow: 1;
-    flex-basis: 100px;
-
-}
-
-/*------------------------------------*/
-/*  TRIANGEL  DIAGONAL LINE    HEADER */
-/*------------------------------------*/
-.triangle_up {
-    position: absolute;
-    border-style: solid;
-    border-width: 50px 0 0 1600px;
-    border-color: var(--white) transparent transparent transparent;
-
-
-}
-
-.triangle_down {
-    position: relative;
-    border-style: solid;
-    border-width:  60px 0px 0px 1600px;
-    border-color: transparent transparent transparent var( --white);
 
 
 
-}
 
 /*------------------ 4. HEADER ------------------------*/
 /* Add a black background color to the top navigation */
 /*-----------------------------------------------------*/
+#header{
+    background: var(--black) var(--blue) var(--purple);
+    background: linear-gradient(120deg, var(--black) 0%, var(--blue) 0%, var(--purple) 80%);
 
+}
 
 .outer-nav {
     display: flex;
     flex-direction: column;
-    background-color: var(--purple);
-    width: 100%;
-
-
-
+    width: 100vw;
 }
 
 .inner-nav {
@@ -200,11 +173,34 @@ h4 {
     color: white;
 }
 
+/*------------------------------------*/
+/*  TRIANGEL                  HEADER */
+/*----------------------------------*/
+.triangle_up {
+
+    display: block;
+    height: 0;
+    width: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    border-style: solid;
+    border-width: 40px 0 0 100vw;
+    border-color: var(--purple) transparent transparent transparent;
+    border-right-color:  var(--purple);
+    border-left-color: var(--white);
+
+
+}
+
+
+
 .inner-content-container h1 {
     display: flex;
     text-align: center;
     justify-self: center;
-    padding: 30px;
+    padding: 140px;
+
 
 }
 
@@ -214,19 +210,6 @@ h4 {
     flex-basis: 100px;
     align-self: center;
     color: #f3f2f8;
-
-}
-
-
-.header {
-
-    background: linear-gradient(300deg, 50% Var(--Paars), 30% var(--blue), 20% var(--black));
-    color: var(--white);
-    width: 100%;
-    height: 600px;
-    display: flex;
-    bottom: -10px;
-    border: 1px var(--blue);
 
 }
 
@@ -369,119 +352,167 @@ h4 {
 /* 5.2  WORK    3 COLUMN   WITH 2 ROWS   */
 /*---------------------------------------*/
 
-/*section*/
-#work {
-    background-color: var(--white);
-    color: var(--black);
-    display: flex;
-    flex-direction: column;
-    padding: 3rem;
-    gap: 3rem;
-
-}
-
 .outer-article {
     display: flex;
+    flex-wrap: wrap;
     align-content: center;
     flex-direction: row;
     width: 100%;
-    justify-content: space-around;
+    justify-items: auto;
+    padding: 20px;
+    justify-content: center;gap: 30px;
+}
 
+
+
+
+
+
+
+
+
+
+.outer-article:nth-child(odd) .inner-article {
+    flex-direction: row-reverse;
 
 }
-/**gap: 10px 20px; /* row-gap column gap */
-/*row-gap: 10px;
-column-gap: 20px; **/
+
 .inner-article {
     display: flex;
-    flex-basis: 64%;
-    gap: 8%;
+    flex-basis: 100%;
+    gap: 50px;  //*was 2*//
     flex-wrap: revert;
     flex-grow: 0;
     flex-shrink: 1;
+    align-items: flex-start;
+    align-self: center;
+    align-content: space-around;
+    font-family: Merriweather, sans-serif;
+
 
 }
-.link-project{
-    text-transform: uppercase;
-}
-.outer-article:nth-child(odd) .inner-article {
-    flex-direction: row-reverse;
-}
 
-
-
-.squi-line {
+.work_text_block{
     display: flex;
-    width: 20%;
+
+    flex-basis: 300px;
+    flex-direction: column ;
+    align-content: baseline;
+    align-self: center;
+    padding: 80px;
 
 }
-.button-view-project {
-    background-color: var(--white);
-    text-transform: uppercase;
-    position: absolute;
-    color: var(--blue); /* Set your desired text color */
-    /* Set your desired padding */
-    border: none; /* Remove button border */
-    cursor: context-menu;
+.text {
+    white-space: nowrap;
+    padding-right: 15px;
 }
 
-.button-view-project::before,
-.button-view-project::after {
-    content: "⎯⎯";
-    position: absolute;
-    background-color: var(--white); /* Set your desired line color */
 
-}
 
-.button-view-project::before {
-    right: 0;
-}
 
-.button-view-project::after {
-    left: 0;
-}
-
-.button-view-project:hover::before {
-    width: 100%;
-    left: 0;
-}
-
-.button-view-project:hover::after {
-    width: 110%;
-    right: 0;
-}
-
-.span {
-    width: 100%;
+.span  {
+    display: flex;
+    flex-shrink: 0;
+    flex-grow: 1;
+    justify-content: space-around ;
+    box-sizing: content-box;
+    align-items: flex-start;
+    align-content: flex-start;
+    image-resolution: from-image;
+    box-shadow: 820px 822px 284px var(--pink), var(--black )0, 0, 0.3var(--blue);
 
 }
 
-img {
-    width: 100%;
-}
 
 .image-wrapper {
-    flex-basis: 800px;
-    flex-grow: 0;
-    flex-shrink: 1;
+    flex-basis: 600px;
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin: 36px;
+    box-sizing: content-box;
+
+
+}
+
+#work h5{
+    font-family: Roboto, sans-serif;
+}
+
+
+.link-project{
+    text-transform: uppercase;
+    flex-basis: 220px;
+    flex-direction: row;
+}
+
+
+
+ .squi-line {
+    display: flex;
+    width: 20%;
+    color: var(--purple);
+
 }
 
 #work a {
     display: flex;
     flex-flow: row;
-
-    position: relative;
-    justify-content: space-between;
+    position: absolute;
     font-stretch: semi-expanded;
-    margin-left: 2px;
     font-size: 14px;
     max-font-size: 14px;
     min-font-size: 6px;
 }
 
 
+.button-view-project {
+    display: flex;
+    background-color: var(--white);
+    text-transform: uppercase;
+    position: relative;
+    flex-basis: 120px;
+    /* Set your desired padding */
+    border: none; /* Remove button border */
+    cursor: context-menu;
+}
+
+.button-line {
+    background-color: #099;
+    color: white;
+    text-decoration: none;
+    border-radius: 60px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    overflow:hidden;
+    width: auto;
+    max-width: 32px; /** I'm animating max-width because width needs to be auto, and auto can't be animated **/
+    -webkit-transition: max-width 0.5s;
+    transition: max-width 0.5s;
+}
+
+/*.button-line:hover {
+
+    content: "→";
+    display: inline-block;
+}*/
+
+.icon {
+    font-family: Font Awesome 5 Free, sans-serif;
+    font-size: 16px;
+    margin-right: 15px;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+
 /*-----------------------------------------------------*/
-/*       5.5    6 FLEX BOXS WRAP ICON TITEL AND TEXT   */
+/*       5.5    6 FLEX BOXS WRAP ICON TITLE AND TEXT   */
 /*-----------------------------------------------------*/
 
 /*-----------------------------------------------------*/
@@ -493,8 +524,9 @@ img {
     flex-wrap: wrap;
     gap: 30px;
     flex-direction: row;
-    padding: 40px;
+    padding: 20px;
     justify-content: center;
+    justify-items: auto;
 
     box-shadow: 0 16px 16px 0 rgba(0, 0, 0, .1);
     color: var(--purple);
@@ -528,10 +560,10 @@ img {
     border-radius: 4px;
     border: 1px solid var(--purple);
     padding: 2rem;
-    flex-basis: 24%;
+    flex-basis: 22%;
     height: 18rem;
     margin: 20px;
-    flex-shrink: 1;
+    flex-shrink: 0;
     flex-grow: 1;
 
 
@@ -544,10 +576,10 @@ img {
     border-radius: 4px;
     border: 1px solid var(--purple);
     padding: 2rem;
-    flex-basis: 24%;
+    flex-basis: 22%;
     height: 18rem;
     margin: 20px;
-    flex-shrink: 1;
+    flex-shrink: 0;
     flex-grow: 1;
 
 }
@@ -558,10 +590,10 @@ img {
     border-radius: 4px;
     border: 1px solid var(--purple);
     padding: 2rem;
-    flex-basis: 24%;
+    flex-basis: 22%;
     height: 18rem;
     margin: 20px;
-    flex-shrink: 1;
+    flex-shrink: 0;
     flex-grow: 1;
 }
 
@@ -571,10 +603,10 @@ img {
     border-radius: 4px;
     border: 1px solid var(--purple);
     padding: 2rem;
-    flex-basis: 24%;
+    flex-basis: 22%;
     height: 18rem;
     margin: 20px;
-    flex-shrink: 1;
+    flex-shrink: 0;
     flex-grow: 1;
 
 }
@@ -585,10 +617,10 @@ img {
     border-radius: 4px;
     border: 1px solid var(--purple);
     padding: 2rem;
-    flex-basis: 24%;
+    flex-basis: 22%;
     height: 18rem;
     margin: 20px;
-    flex-shrink: 1;
+    flex-shrink: 0;
     flex-grow: 1;
 }
 
@@ -598,10 +630,10 @@ img {
     border-radius: 4px;
     border: 1px solid var(--purple);
     padding: 2rem;
-    flex-basis: 24%;
+    flex-basis: 22%;
     height: 18rem;
     margin: 20px;
-    flex-shrink: 1;
+    flex-shrink: 0;
     flex-grow: 1;
 }
 
@@ -656,15 +688,16 @@ form {
     flex-shrink: 0;
     justify-content: center;
     border-radius: 24px;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 20%;
+    padding-right: 20%;
+    box-sizing: border-box;
 
 }
 
 
 label {
     margin-top:18px;
-    font-family: Roboto, Sans-serif;
+    font-family: Roboto, sans-serif;
 
 }
 
@@ -684,7 +717,7 @@ input, textarea {
     margin: 18px;
     border-radius: 24px;
     border-color: #ED4385;
-    border: 0px;
+    border: 0;
     align-self: center;
 
 
